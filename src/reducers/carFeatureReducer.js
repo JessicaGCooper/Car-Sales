@@ -32,10 +32,10 @@ export const carFeatureReducer = (state = initialState, action) => {
             }
         case REMOVE_FEATURE:
                 console.log('RemoveFeature reducer: action.payload', action.payload)
-                console.log("Remove feature state.additionalPrice", state.additionalPrice, action.payload.price)
+                console.log("RemoveFeature state.additionalPrice & action.payload.price", state.additionalPrice, action.payload.price)
             return {
                 ...state,
-                additionalPrice: (state.additonalPrice - action.payload.price),
+                additionalPrice: (state.additionalPrice - action.payload.price),
                 car: {...state.car, features: state.car.features.filter( feature => {
                     return feature.id !== action.payload.id
                 })},
